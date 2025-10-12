@@ -91,5 +91,82 @@
       Background image by <a href="https://unsplash.com/photos/photo-1504384308090-c894fdcc538d" target="_blank">Taylor Vick</a> on Unsplash.
     </footer>
   </div>
+  <style>
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px var(--neon-color, #00ffee55); }
+  50% { box-shadow: 0 0 25px var(--neon-color, #00ffeeaa); }
+  100% { box-shadow: 0 0 10px var(--neon-color, #00ffee55); }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.3; }
+}
+
+.cyber-counter {
+  font-family: 'Courier New', monospace;
+  background: radial-gradient(circle at center, #00111a 0%, #000000 100%);
+  color: var(--neon-color, #00ffee);
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid var(--neon-color, #00ffee);
+  border-radius: 8px;
+  width: fit-content;
+  margin: 40px auto;
+  animation: pulse 3s infinite;
+  transition: color 1s, border-color 1s, box-shadow 1s;
+}
+
+.cyber-num {
+  color: var(--neon-color, #00ffcc);
+  text-shadow: 0 0 5px var(--neon-color, #00ffee), 0 0 10px var(--neon-color, #00ffee);
+  animation: flicker 2s infinite;
+  font-size: 22px;
+  transition: color 1s, text-shadow 1s;
+}
+
+.cyber-sub {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #00cccc;
+  opacity: 0.8;
+}
+</style>
+
+<div class="cyber-counter" id="counterBox">
+  <div>> 系统状态：运行中_</div>
+  <div style="margin-top:10px;">
+    全局访问计数 >> <span id="num" class="cyber-num">00000</span>
+  </div>
+  <div class="cyber-sub">
+    您的到访已被系统记录。感谢连接至此节点。
+  </div>
+</div>
+
+<script>
+// 初始化计数（只需第一次手动执行一次）
+// fetch('https://api.countapi.xyz/set/hanlure.com/num?value=9876');
+
+// 每次访问 +1 并显示
+fetch('https://api.countapi.xyz/hit/hanlure.com/num')
+  .then(r => r.json())
+  .then(r => {
+    const num = r.value.toString().padStart(5, '0');
+    document.getElementById('num').innerText = num;
+  });
+
+// 🌈 定义随机颜色函数
+function randomNeonColor() {
+  const colors = ['#00ffee', '#00ff99', '#33ccff', '#ff33cc', '#cc66ff', '#ff6666', '#66ffcc'];
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// 🌈 每3秒切换一次颜色
+setInterval(() => {
+  const color = randomNeonColor();
+  document.documentElement.style.setProperty('--neon-color', color);
+}, 3000);
+</script>
 </body>
 </html>
