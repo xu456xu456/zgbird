@@ -145,24 +145,23 @@
 </div>
 
 <script>
-// 初始化计数（只需第一次手动执行一次）
-// fetch('https://api.countapi.xyz/set/hanlure.com/num?value=9876');
+// 🚀 初始化计数器（只执行一次）
+// fetch('https://api.countapi.xyz/set/zgbird.com/num?value=9876');
 
-// 每次访问 +1 并显示
-fetch('https://api.countapi.xyz/hit/hanlure.com/num')
+// 每次访问自动 +1 并显示
+fetch('https://api.countapi.xyz/hit/zgbird.com/num')
   .then(r => r.json())
   .then(r => {
     const num = r.value.toString().padStart(5, '0');
     document.getElementById('num').innerText = num;
   });
 
-// 🌈 定义随机颜色函数
+// 🌈 随机霓虹色效果
 function randomNeonColor() {
   const colors = ['#00ffee', '#00ff99', '#33ccff', '#ff33cc', '#cc66ff', '#ff6666', '#66ffcc'];
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// 🌈 每3秒切换一次颜色
 setInterval(() => {
   const color = randomNeonColor();
   document.documentElement.style.setProperty('--neon-color', color);
