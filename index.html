@@ -68,7 +68,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- ✅ 图片部分（优先加载 AVIF） -->
     <picture>
       <source srcset="photo-1504384308090-c894fdcc538d.avif" type="image/avif">
       <img src="photo-1504384308090-c894fdcc538d.jpg" alt="科技背景图" loading="lazy">
@@ -78,7 +77,6 @@
     <h2>智光鸟 · Zhi Guang Bird</h2>
     <div class="divider"></div>
 
-    <!-- 域名出售信息 -->
     <p class="for-sale">🔥 域名出售中 · Domain For Sale</p>
 
     <p>“ZGBIRD · 智光鸟”寓意灵感与科技的交汇，象征创新与智能。<br>
@@ -91,7 +89,11 @@
       Background image by <a href="https://unsplash.com/photos/photo-1504384308090-c894fdcc538d" target="_blank">Taylor Vick</a> on Unsplash.
     </footer>
   </div>
-  <style>
+
+<!-- ===========================
+     🚀 科技风本地计数器（localStorage 版）
+     =========================== -->
+<style>
 @keyframes pulse {
   0% { box-shadow: 0 0 10px var(--neon-color, #00ffee55); }
   50% { box-shadow: 0 0 25px var(--neon-color, #00ffeeaa); }
@@ -137,31 +139,30 @@
 <div class="cyber-counter" id="counterBox">
   <div>> 系统状态：运行中_</div>
   <div style="margin-top:10px;">
-    全局访问计数 >> <span id="num" class="cyber-num">00000</span>
+    本地访问计数 >> <span id="num" class="cyber-num">00000</span>
   </div>
   <div class="cyber-sub">
-    您的到访已被系统记录。感谢连接至此节点。
+    您的访问数据仅保存在本地设备中。
   </div>
 </div>
 
 <script>
-// 🚀 初始化计数器（只执行一次）
-// fetch('https://api.countapi.xyz/set/zgbird.com/num?value=9876');
-
-// 每次访问自动 +1 并显示
-fetch('https://api.countapi.xyz/hit/zgbird.com/num')
-  .then(r => r.json())
-  .then(r => {
-    const num = r.value.toString().padStart(5, '0');
-    document.getElementById('num').innerText = num;
-  });
+// 🚀 本地计数逻辑
+let count = localStorage.getItem('local_visit_count');
+if (!count) {
+  count = 9876;
+} else {
+  count = parseInt(count);
+}
+count++;
+localStorage.setItem('local_visit_count', count);
+document.getElementById('num').innerText = count.toString().padStart(5, '0');
 
 // 🌈 随机霓虹色效果
 function randomNeonColor() {
   const colors = ['#00ffee', '#00ff99', '#33ccff', '#ff33cc', '#cc66ff', '#ff6666', '#66ffcc'];
   return colors[Math.floor(Math.random() * colors.length)];
 }
-
 setInterval(() => {
   const color = randomNeonColor();
   document.documentElement.style.setProperty('--neon-color', color);
