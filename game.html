@@ -8,7 +8,7 @@
   html,body{margin:0;height:100%;background:#0d1117;color:#e6edf3;font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;}
   .wrap{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px}
   #c{background:#121826;border:2px solid #222a3a;border-radius:12px;touch-action:manipulation;}
-  .hud{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .hud{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
   .btn{cursor:pointer;border:1px solid #2a3245;border-radius:10px;padding:6px 10px;background:#141a26}
   .btn:active{transform:translateY(1px)}
   .score{font-weight:700}
@@ -53,21 +53,22 @@
   }
   window.addEventListener('resize', fitCanvas); fitCanvas();
 
-  // 游戏参数（尽量小内存、少对象复用）
+  // 游戏参数
   const W = cvs.width, H = cvs.height;
   const GRAV = 1500;       // 重力 px/s^2
   const JUMP_V = -420;     // 跳跃初速度
   const BIRD_X = W*0.28;
   const PIPE_GAP_MIN = 150, PIPE_GAP_MAX = 190;
   const PIPE_W = 70;
-  const PIPE_SPEED = 160;  // px/s
-  const PIPE_INTERVAL = 1450; // ms
+  const PIPE_SPEED = 160;      // px/s
+  const PIPE_INTERVAL = 1450;  // ms
 
   // 状态
   let birdY, birdV, score, best, running=false, paused=false, gameOver=false;
   let lastTS=0, accInterval=0;
-  const pipes = []; // {x, topH, gap}
-  // 为减少垃圾回收，使用少量颜色与简易绘制
+  const pipes = []; // {x, topH, gap, passed}
+
+  // 背景
   const skyGrad = ctx.createLinearGradient(0,0,0,H);
   skyGrad.addColorStop(0,'#0b1224');
   skyGrad.addColorStop(1,'#0f172a');
@@ -78,11 +79,26 @@
     birdV = 0;
     score = 0;
     gameOver = false;
+    paused = false;
     accInterval = 0;
     lastTS = 0;
     $score.textContent = score;
     best = parseInt(localStorage.getItem(BEST_KEY)||'0',10);
     $best.textContent = best;
+    draw();
+  }
+
+  function start(){
+    if (running) return;
+    running = true;
+    paused = false;
+    requestAnimationFrame(frame);
+  }
+
+  // ✅ 新增：重开（重置并立即开始）
+  function restartGame(){
+    reset();
+    start();
   }
 
   function spawnPipe(){
@@ -139,7 +155,7 @@
     ctx.fillStyle = skyGrad;
     ctx.fillRect(0,0,W,H);
 
-    // 星点（程序绘制，极小成本）
+    // 星点
     ctx.globalAlpha = 0.08;
     for (let i=0;i<60;i++){
       const x = (i*73)%W, y=(i*127)%H;
@@ -155,16 +171,14 @@
     // 管道
     for (let i=0;i<pipes.length;i++){
       const p = pipes[i];
-      // 上
       pipeRect(p.x, 0, PIPE_W, p.topH);
-      // 下
       pipeRect(p.x, p.topH + p.gap, PIPE_W, H - (p.topH + p.gap));
     }
 
-    // 鸟（用圆+眼睛，不用图片）
+    // 鸟
     drawBird(BIRD_X, birdY);
 
-    // 文本
+    // 提示
     if (!running && !gameOver){
       banner('点击 / 空格 开始', H*0.42);
     }
@@ -201,7 +215,6 @@
     ctx.globalAlpha = 1;
   }
   function drawBird(x,y){
-    // 身体
     ctx.beginPath();
     ctx.arc(x, y, 16, 0, Math.PI*2);
     ctx.closePath();
@@ -209,7 +222,7 @@
     ctx.fill();
     ctx.strokeStyle = '#e0a800';
     ctx.stroke();
-    // 翅膀（轻微上下摆）
+    // 翅膀
     const flap = Math.sin(perf())*4;
     ctx.beginPath();
     ctx.ellipse(x-6, y+flap, 10,6, 0, 0, Math.PI*2);
@@ -254,19 +267,6 @@
   function perf(){ return (performance.now()/180); }
 
   // --- 控制 ---
-  function jump(){
-    if (!running){ start(); return; }
-    if (gameOver){ reset(); return; }
-    if (paused){ paused=false; return; }
-    birdV = JUMP_V;
-  }
-  function start(){
-    if (running) return;
-    reset();
-    running = true;
-    paused = false;
-    requestAnimationFrame(frame);
-  }
   function endGame(){
     gameOver = true;
     running = false;
@@ -286,16 +286,23 @@
       draw();
     }
   }
+  function jump(){
+    if (!running){ start(); return; }
+    if (gameOver){ restartGame(); return; } // Game Over 时点画布也直接重开
+    if (paused){ paused=false; }
+    birdV = JUMP_V;
+  }
+
   // 事件
   cvs.addEventListener('pointerdown', jump, {passive:true});
   window.addEventListener('keydown', (e)=>{
     if (e.code === 'Space') { e.preventDefault(); jump(); }
     if (e.key.toLowerCase() === 'p') togglePause();
-    if (e.key.toLowerCase() === 'r') { reset(); running=false; draw(); }
+    if (e.key.toLowerCase() === 'r') restartGame(); // ✅ R 直接重开
   });
   $start.onclick = start;
   $pause.onclick = togglePause;
-  $restart.onclick = ()=>{ reset(); running=false; draw(); };
+  $restart.onclick = restartGame; // ✅ 按钮直接重开
 
   // 初始渲染
   reset(); draw();
