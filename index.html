@@ -6,225 +6,120 @@
 <meta name="robots" content="noindex,nofollow">
 <title>ZGBIRD.com · 域名出售中 · Domain For Sale</title>
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "PingFang SC", "Noto Sans", "Microsoft YaHei", sans-serif;
-    background-color: #0b0d17;
-    color: #e6e6e6;
-    text-align: center;
-  }
-  .container {
-    max-width: 720px;
-    margin: 8% auto;
-    padding: 0 20px;
-  }
-  picture, img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-  }
-  h1 {
-    font-size: 36px;
-    margin-top: 28px;
-    color: #00aaff;
-    letter-spacing: 1px;
-  }
-  h2 {
-    font-size: 20px;
-    font-weight: 400;
-    color: #8ec9ff;
-    margin: 10px 0 15px 0;
-  }
-  .for-sale {
-    color: #ffcc00;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 20px 0;
-  }
-  p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #ccc;
-    margin: 10px 0;
-  }
-  em {
-    display: block;
-    font-size: 14px;
-    color: #8ec9ff;
-    margin-top: 4px;
-  }
-  a {
-    color: #00aaff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .divider {
-    width: 60px;
-    height: 2px;
-    background: #00aaff;
-    margin: 20px auto;
-  }
-  .btn-group {
-    margin-top: 25px;
-  }
-  .btn {
-    display: inline-block;
-    background: #00aaff;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 8px;
-    border-radius: 6px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-  }
-  .btn:hover {
-    background: #33ccff;
-    box-shadow: 0 0 10px #00aaffaa;
-    transform: translateY(-2px);
-  }
-  footer {
-    font-size: 12px;
-    color: #666;
-    margin-top: 40px;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "PingFang SC","Noto Sans","Microsoft YaHei",sans-serif;
+  background-color: #0b0d17;
+  color: #e6e6e6;
+  text-align: center;
+}
+.container {
+  max-width: 720px;
+  margin: 8% auto;
+  padding: 0 20px;
+}
+picture, img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+h1 {
+  font-size: 36px;
+  margin-top: 28px;
+  color: #00aaff;
+  letter-spacing: 1px;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #8ec9ff;
+  margin: 10px 0 15px 0;
+}
+.for-sale {
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px 0;
+}
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ccc;
+  margin: 10px 0;
+}
+em {
+  display: block;
+  font-size: 14px;
+  color: #8ec9ff;
+  margin-top: 4px;
+}
+a {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.divider {
+  width: 60px;
+  height: 2px;
+  background: #00aaff;
+  margin: 20px auto;
+}
+.btn-group {
+  margin-top: 25px;
+}
+.btn {
+  display: inline-block;
+  background: #00aaff;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #33ccff;
+  box-shadow: 0 0 10px #00aaffaa;
+  transform: translateY(-2px);
+}
+footer {
+  font-size: 12px;
+  color: #666;
+  margin-top: 40px;
+}
 
-  /* ====== 新增：Mini Game（内嵌，默认折叠） ====== */
-  .mini-game-wrap {
-    margin: 40px auto 0;
-    max-width: 720px;
-  }
-  .mini-game-toggle {
-    display: inline-block;
-    background: #0f1624;
-    color: #e6e6e6;
-    border: 1px solid #1d2a44;
-    padding: 10px 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 700;
-    letter-spacing: .3px;
-    transition: background .15s ease, border-color .15s ease, transform .06s ease;
-  }
-  .mini-game-toggle:hover {
-    background: #121d33;
-    border-color: #27416e;
-  }
-  .mini-game-toggle:active {
-    transform: translateY(1px);
-  }
-  .mini-game-panel {
-    display: none; /* 默认折叠 */
-    margin-top: 16px;
-    background: #0f1624;
-    border: 1px solid #1d2a44;
-    border-radius: 12px;
-    padding: 12px;
-  }
-  .mini-game-hud {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-    color: #cfe3ff;
-    font-size: 14px;
-  }
-  .mini-game-btn {
-    cursor: pointer;
-    border: 1px solid #2a3d64;
-    border-radius: 10px;
-    padding: 6px 10px;
-    background: #0c1324;
-    color: #e6e6e6;
-  }
-  #gameCanvas {
-    width: 420px; height: 680px; max-width: 95%;
-    background: #121826;
-    border: 2px solid #222a3a;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.35);
-  }
-  .mini-game-note {
-    color: #9fb1d1; font-size: 12px; margin-top: 6px;
-  }
-</style>
-</head>
-<body>
-  <div class="container">
-    <picture>
-      <source srcset="photo-1504384308090-c894fdcc538d.avif" type="image/avif">
-      <img src="photo-1504384308090-c894fdcc538d.jpg" alt="科技背景图" loading="lazy">
-    </picture>
-
-    <h1>ZGBIRD.com</h1>
-    <em>ZGBIRD.com</em>
-
-    <h2>智光鸟 · Zhi Guang Bird</h2>
-    <em>"Zhi Guang Bird" means “Smart Light Bird”.</em>
-
-    <div class="divider"></div>
-
-    <p class="for-sale">🔥 域名出售中 · Domain For Sale</p>
-
-    <p>“ZGBIRD · 智光鸟”寓意灵感与科技的交汇，象征创新与智能。<br>
-    <em>“ZGBIRD · Zhi Guang Bird” symbolizes the fusion of inspiration and technology — innovation and intelligence.</em></p>
-
-    <p>此域名适用于科技、创新、品牌类项目。<br>
-    <em>This domain is ideal for technology, innovation, and branding projects.</em></p>
-
-    <p><strong>欢迎有意者联系洽谈购买。</strong><br>
-    <em>Interested buyers are welcome to inquire for acquisition.</em></p>
-
-    <p>联系邮箱：<a href="mailto:xu456xu@gmail.com">xu456xu@gmail.com</a><br>
-    <em>Contact Email: <a href="mailto:xu456xu@gmail.com">xu456xu@gmail.com</a></em></p>
-
-    <!-- 💬 新增按钮 -->
-    <div class="btn-group">
-      <a href="mailto:xu456xu@gmail.com" class="btn">💌 Email Inquiry</a>
-      <a href="https://dan.com/buy-domain/zgbird.com" target="_blank" class="btn">💰 View on Dan.com</a>
-    </div>
-
-    <footer>
-      Background image by <a href="https://unsplash.com/photos/photo-1504384308090-c894fdcc538d" target="_blank">Taylor Vick</a> on Unsplash.
-    </footer>
-  </div>
-
-<!-- ===========================
-     🚀 科技风本地计数器（计数代码）
-     =========================== -->
-<style>
+/* ===== 计数器样式 ===== */
 @keyframes pulse {
   0% { box-shadow: 0 0 10px var(--neon-color, #00ffee55); }
   50% { box-shadow: 0 0 25px var(--neon-color, #00ffeeaa); }
   100% { box-shadow: 0 0 10px var(--neon-color, #00ffee55); }
 }
 @keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 22%, 24%, 55% { opacity: 0.3; }
+  0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;}
+  20%,22%,24%,55%{opacity:0.3;}
 }
 .cyber-counter {
   font-family: 'Courier New', monospace;
-  background: radial-gradient(circle at center, #00111a 0%, #000000 100%);
-  color: var(--neon-color, #00ffee);
+  background: radial-gradient(circle at center,#00111a 0%,#000000 100%);
+  color: var(--neon-color,#00ffee);
   font-size: 18px;
   text-align: center;
   padding: 20px;
-  border: 1px solid var(--neon-color, #00ffee);
+  border: 1px solid var(--neon-color,#00ffee);
   border-radius: 8px;
   width: fit-content;
   margin: 40px auto;
   animation: pulse 3s infinite;
-  transition: color 1s, border-color 1s, box-shadow 1s;
+  transition: color 1s,border-color 1s,box-shadow 1s;
 }
 .cyber-num {
-  color: var(--neon-color, #00ffcc);
-  text-shadow: 0 0 5px var(--neon-color, #00ffee), 0 0 10px var(--neon-color, #00ffee);
+  color: var(--neon-color,#00ffcc);
+  text-shadow: 0 0 5px var(--neon-color,#00ffee),0 0 10px var(--neon-color,#00ffee);
   animation: flicker 2s infinite;
   font-size: 22px;
-  transition: color 1s, text-shadow 1s;
+  transition: color 1s,text-shadow 1s;
 }
 .cyber-sub {
   margin-top: 8px;
@@ -232,9 +127,81 @@
   color: #00cccc;
   opacity: 0.8;
 }
-</style>
 
+/* ===== Mini Game 样式 ===== */
+.mini-game-panel {
+  display: none;
+  margin-top: 20px;
+  background: #0f1624;
+  border: 1px solid #1d2a44;
+  border-radius: 12px;
+  padding: 12px;
+}
+#gameCanvas {
+  width: 420px;
+  height: 680px;
+  max-width: 95%;
+  background: #121826;
+  border: 2px solid #222a3a;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+.mini-game-note {
+  color: #9fb1d1;
+  font-size: 12px;
+  margin-top: 6px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <picture>
+    <img src="photo-1504384308090-c894fdcc538d.jpg" alt="科技背景图" loading="lazy">
+  </picture>
+
+  <h1>ZGBIRD.com</h1>
+  <em>ZGBIRD.com</em>
+
+  <h2>智光鸟 · Zhi Guang Bird</h2>
+  <em>"Zhi Guang Bird" means “Smart Light Bird”.</em>
+
+  <div class="divider"></div>
+
+  <p class="for-sale">🔥 域名出售中 · Domain For Sale</p>
+
+  <p>“ZGBIRD · 智光鸟”寓意灵感与科技的交汇，象征创新与智能。<br>
+  <em>“ZGBIRD · Zhi Guang Bird” symbolizes the fusion of inspiration and technology — innovation and intelligence.</em></p>
+
+  <p>此域名适用于科技、创新、品牌类项目。<br>
+  <em>This domain is ideal for technology, innovation, and branding projects.</em></p>
+
+  <p><strong>欢迎有意者联系洽谈购买。</strong><br>
+  <em>Interested buyers are welcome to inquire for acquisition.</em></p>
+
+  <p>联系邮箱：<a href="mailto:xu456xu@gmail.com">xu456xu@gmail.com</a><br>
+  <em>Contact Email: <a href="mailto:xu456xu@gmail.com">xu456xu@gmail.com</a></em></p>
+
+  <div class="btn-group">
+    <a href="mailto:xu456xu@gmail.com" class="btn">💌 Email Inquiry</a>
+    <a href="https://dan.com/buy-domain/zgbird.com" target="_blank" class="btn">💰 View on Dan.com</a>
+  </div>
+
+  <footer>
+    Background image by <a href="https://unsplash.com/photos/photo-1504384308090-c894fdcc538d" target="_blank">Taylor Vick</a> on Unsplash.
+  </footer>
+</div>
+
+<!-- ======== 计数器 + 游戏按钮 ======== -->
 <div class="cyber-counter" id="counterBox">
+  <!-- 加大的游戏按钮 -->
+  <button id="toggleGame"
+    style="display:block;margin:0 auto 16px auto;font-size:22px;padding:14px 28px;
+           background:#00aaff;color:#fff;border:none;border-radius:8px;
+           font-weight:700;letter-spacing:.6px;cursor:pointer;
+           box-shadow:0 0 20px #00aaffaa;transition:transform .15s ease;">
+    🎮 Play a mini game
+  </button>
+
   <div>> 系统状态：运行中_</div>
   <div style="margin-top:10px;">
     本地访问计数 >> <span id="num" class="cyber-num">00000</span>
@@ -244,238 +211,57 @@
   </div>
 </div>
 
-<!-- ===== 新增：Mini Game（点击展开，英文，不侵权） ===== -->
-<div class="mini-game-wrap">
-  <button id="toggleGame" class="mini-game-toggle" aria-expanded="false" aria-controls="miniGamePanel" aria-label="Play a mini game">
-    🎮 Play a mini game
-  </button>
-
-  <div id="miniGamePanel" class="mini-game-panel" role="region" aria-label="Mini Game">
-    <div class="mini-game-hud">
-      <span>Score: <strong id="gScore">0</strong></span>
-      <span>Best: <strong id="gBest">0</strong></span>
-      <button id="gStart" class="mini-game-btn" aria-label="Start">▶ Start</button>
-      <button id="gPause" class="mini-game-btn" aria-label="Pause">⏸ Pause</button>
-      <button id="gRestart" class="mini-game-btn" aria-label="Restart">↺ Restart</button>
-    </div>
-    <canvas id="gameCanvas" width="420" height="680" aria-label="Sky Hopper Mini canvas"></canvas>
-    <div class="mini-game-note">Click / tap / Space to jump · P to pause · R to restart · Original mini game (no third-party brands).</div>
-  </div>
+<!-- ===== Mini Game 区域 ===== -->
+<div id="miniGamePanel" class="mini-game-panel">
+  <canvas id="gameCanvas" width="420" height="680"></canvas>
+  <div class="mini-game-note">Click / tap / Space to jump · P to pause · R to restart</div>
 </div>
 
 <script>
-// 计数器逻辑（原样保留）
+// 计数器
 let count = localStorage.getItem('local_visit_count');
-if (!count) {
-  count = 9876;
-} else {
-  count = parseInt(count);
-}
+if (!count) count = 9876; else count = parseInt(count);
 count++;
 localStorage.setItem('local_visit_count', count);
-document.getElementById('num').innerText = count.toString().padStart(5, '0');
+document.getElementById('num').innerText = count.toString().padStart(5,'0');
 
-// 霓虹色变换（原样保留）
-function randomNeonColor() {
-  const colors = ['#00ffee', '#00ff99', '#33ccff', '#ff33cc', '#cc66ff', '#ff6666', '#66ffcc'];
-  return colors[Math.floor(Math.random() * colors.length)];
+// 霓虹变化
+function randomNeonColor(){
+  const c=['#00ffee','#00ff99','#33ccff','#ff33cc','#cc66ff','#ff6666','#66ffcc'];
+  return c[Math.floor(Math.random()*c.length)];
 }
-setInterval(() => {
-  const color = randomNeonColor();
-  document.documentElement.style.setProperty('--neon-color', color);
-}, 3000);
+setInterval(()=>document.documentElement.style.setProperty('--neon-color',randomNeonColor()),3000);
 
-// ===== Mini Game：展开/收起 =====
+// ===== 游戏展开逻辑 =====
+document.getElementById('toggleGame').onclick=function(){
+  const panel=document.getElementById('miniGamePanel');
+  panel.style.display='block';
+  panel.scrollIntoView({behavior:'smooth'});
+  if(typeof window.__game_init==='function')window.__game_init();
+};
+
+// ===== 简化小游戏（原创无侵权） =====
 (function(){
-  const toggle = document.getElementById('toggleGame');
-  const panel = document.getElementById('miniGamePanel');
-  toggle.addEventListener('click', ()=>{
-    const open = panel.style.display !== 'block';
-    panel.style.display = open ? 'block' : 'none';
-    toggle.setAttribute('aria-expanded', String(open));
-    if (open && typeof window.__game_init === 'function') {
-      window.__game_init(); // 首次展开时初始化
-    }
-  });
-})();
-
-// ===== Mini Game：Sky Hopper Mini（纯前端，无侵权） =====
-(function(){
-  const BEST_KEY = 'zgbird_skyhopper_best_v1';
-  let inited = false;
-
-  window.__game_init = function(){
-    if (inited) return; inited = true;
-
-    const cvs = document.getElementById('gameCanvas');
-    const ctx = cvs.getContext('2d', { alpha: false });
-    const $score = document.getElementById('gScore');
-    const $best = document.getElementById('gBest');
-    const $start = document.getElementById('gStart');
-    const $pause = document.getElementById('gPause');
-    const $restart = document.getElementById('gRestart');
-
-    // responsive width (CSS 已限制 max-width)
-    function fit(){ /* canvas 固定像素渲染，CSS 负责缩放，避免模糊 */ }
-    window.addEventListener('resize', fit); fit();
-
-    // constants
-    const W=cvs.width, H=cvs.height;
-    const GRAV=1500, JUMP_V=-420, BIRD_X=W*0.28;
-    const GAP_MIN=150, GAP_MAX=190, PIPE_W=70, PIPE_SPEED=160, PIPE_INTERVAL=1450;
-
-    // state
-    let birdY, birdV, score, best, running=false, paused=false, gameOver=false;
-    let lastTS=0, accInterval=0;
-    const pipes = []; // {x, topH, gap, passed}
-
-    const skyGrad = ctx.createLinearGradient(0,0,0,H);
-    skyGrad.addColorStop(0,'#0b1224');
-    skyGrad.addColorStop(1,'#0f172a');
-
-    function reset(){
-      pipes.length=0;
-      birdY=H/2; birdV=0;
-      score=0; gameOver=false; paused=false;
-      accInterval=0; lastTS=0;
-      $score.textContent=score;
-      best=parseInt(localStorage.getItem(BEST_KEY)||'0',10);
-      $best.textContent=best;
-      draw();
-    }
-
-    function spawnPipe(){
-      const gap = rand(GAP_MIN, GAP_MAX);
-      const margin = 40;
-      const topH = rand(margin, H - margin - gap);
-      pipes.push({ x: W + PIPE_W, topH, gap, passed:false });
-    }
-
-    function update(dt){
-      if (paused || gameOver) return;
-      birdV += GRAV*dt; birdY += birdV*dt;
-
-      accInterval += dt*1000;
-      if (accInterval >= PIPE_INTERVAL){ accInterval -= PIPE_INTERVAL; spawnPipe(); }
-
-      for (let i=0;i<pipes.length;i++){
-        const p=pipes[i];
-        p.x -= PIPE_SPEED*dt;
-        if (!p.passed && p.x + PIPE_W < BIRD_X){
-          p.passed = true; score++; $score.textContent=score;
-        }
-      }
-      while (pipes.length && pipes[0].x + PIPE_W < -10) pipes.shift();
-      if (pipes.length > 6) pipes.shift();
-
-      // bounds & collisions
-      if (birdY < 0 || birdY > H){ endGame(); return; }
-      for (let i=0;i<pipes.length;i++){
-        const p=pipes[i];
-        if (AABB(BIRD_X-16, birdY-16, 32,32, p.x,0,PIPE_W,p.topH) ||
-            AABB(BIRD_X-16, birdY-16, 32,32, p.x,p.topH+p.gap,PIPE_W,H)){
-          endGame(); return;
-        }
-      }
-    }
-
-    function draw(){
-      // bg
-      ctx.fillStyle=skyGrad; ctx.fillRect(0,0,W,H);
-      // stars
-      ctx.globalAlpha=0.08;
-      for(let i=0;i<60;i++){ const x=(i*73)%W, y=(i*127)%H; ctx.fillStyle='#b6c5ff'; ctx.fillRect(x,y,2,2); }
-      ctx.globalAlpha=1;
-      // ground
-      ctx.fillStyle='#0b132b'; ctx.fillRect(0,H-40,W,40);
-
-      // pipes
-      for(let i=0;i<pipes.length;i++){
-        const p=pipes[i];
-        pipeRect(p.x,0,PIPE_W,p.topH);
-        pipeRect(p.x,p.topH+p.gap,PIPE_W,H-(p.topH+p.gap));
-      }
-      // bird
-      drawBird(BIRD_X,birdY);
-
-      if (!running && !gameOver) banner('Click / Space to start', H*0.42);
-      if (paused) banner('Paused · Press P or click', H*0.42);
-      if (gameOver){ banner('Game Over · ↺ Restart', H*0.40); smallText(`Score ${score} · Best ${best}`, H*0.40+40); }
-    }
-
-    function frame(ts){
-      if (!running){ draw(); return; }
-      if (!lastTS) lastTS = ts;
-      const dt = Math.min(0.033, (ts - lastTS)/1000);
-      lastTS = ts;
-      update(dt); draw(); requestAnimationFrame(frame);
-    }
-
-    // helpers
-    function pipeRect(x,y,w,h){
-      ctx.fillStyle='#1f2937'; ctx.fillRect(x,y,w,h);
-      ctx.strokeStyle='#2a364a'; ctx.lineWidth=3; ctx.strokeRect(x+0.5,y+0.5,w-1,h-1);
-      ctx.globalAlpha=0.12; ctx.fillStyle='#9fb5ff'; ctx.fillRect(x+4,y+4,w-8,6); ctx.globalAlpha=1;
-    }
-    function drawBird(x,y){
-      ctx.beginPath(); ctx.arc(x,y,16,0,Math.PI*2); ctx.closePath();
-      ctx.fillStyle='#ffd166'; ctx.fill(); ctx.strokeStyle='#e0a800'; ctx.stroke();
-      const flap=Math.sin(perf())*4;
-      ctx.beginPath(); ctx.ellipse(x-6,y+flap,10,6,0,0,Math.PI*2); ctx.fillStyle='#f9c74f'; ctx.fill();
-      ctx.beginPath(); ctx.arc(x+6,y-6,4,0,Math.PI*2); ctx.fillStyle='#fff'; ctx.fill();
-      ctx.beginPath(); ctx.arc(x+6,y-6,2,0,Math.PI*2); ctx.fillStyle='#000'; ctx.fill();
-      ctx.beginPath(); ctx.moveTo(x+14,y-2); ctx.lineTo(x+22,y+1); ctx.lineTo(x+14,y+4); ctx.closePath(); ctx.fillStyle='#f77f00'; ctx.fill();
-    }
-    function banner(text,y){
-      ctx.font='bold 28px system-ui,Arial'; ctx.fillStyle='rgba(0,0,0,.35)';
-      const w=ctx.measureText(text).width+28, x=(W-w)/2;
-      ctx.fillRect(x,y-30,w,48);
-      ctx.fillStyle='#e6e6e6';
-      ctx.fillText(text,(W-ctx.measureText(text).width)/2,y);
-    }
-    function smallText(text,y){
-      ctx.font='600 18px system-ui,Arial'; ctx.fillStyle='#cbd5e1';
-      ctx.fillText(text,(W-ctx.measureText(text).width)/2,y);
-    }
-    function AABB(ax,ay,aw,ah,bx,by,bw,bh){
-      return ax<bx+bw && ax+aw>bx && ay<by+bh && ay+ah>by;
-    }
-    function rand(a,b){ return (a + Math.random()*(b-a))|0; }
-    function perf(){ return (performance.now()/180); }
-
-    // controls
-    function jump(){
-      if (!running){ start(); return; }
-      if (gameOver){ reset(); return; }
-      if (paused){ paused=false; return; }
-      birdV = JUMP_V;
-    }
-    function start(){
-      if (running) return;
-      reset(); running=true; requestAnimationFrame(frame);
-    }
-    function endGame(){
-      gameOver=true; running=false;
-      if (score>best){ best=score; localStorage.setItem(BEST_KEY,String(best)); $best.textContent=best; }
-    }
-    function togglePause(){
-      if (!running || gameOver) return;
-      paused=!paused; if(!paused){ lastTS=0; requestAnimationFrame(frame); } else { draw(); }
-    }
-
-    cvs.addEventListener('pointerdown', jump, {passive:true});
-    window.addEventListener('keydown', (e)=>{
-      if (e.code==='Space'){ e.preventDefault(); jump(); }
-      if (e.key.toLowerCase()==='p') togglePause();
-      if (e.key.toLowerCase()==='r') reset();
-    });
-    $start.onclick = start;
-    $pause.onclick = togglePause;
-    $restart.onclick = ()=>{ reset(); };
-
-    // 初始静态帧
-    reset();
-  };
+  const cvs=document.getElementById('gameCanvas');
+  const ctx=cvs.getContext('2d');
+  const W=cvs.width,H=cvs.height;
+  const GR=1500,JUMP=-420;
+  let y=H/2,v=0,run=false,over=false,last=0;
+  const pipes=[];let score=0;
+  function reset(){y=H/2;v=0;pipes.length=0;score=0;run=true;over=false;last=0;draw();}
+  function draw(){
+    ctx.fillStyle='#0b1224';ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#ffd166';ctx.beginPath();ctx.arc(W/4,y,16,0,2*Math.PI);ctx.fill();
+    ctx.fillStyle='#fff';ctx.font='20px Arial';ctx.fillText('Score:'+score,20,30);
+  }
+  function step(ts){
+    if(!run)return;
+    const dt=(ts-last)/1000||0;last=ts;
+    v+=GR*dt;y+=v*dt;if(y>H-20){y=H-20;v=0;over=true;}
+    draw();if(!over)requestAnimationFrame(step);
+  }
+  cvs.onclick=()=>{if(!run){reset();requestAnimationFrame(step);}v=JUMP;};
+  window.__game_init=()=>draw();
 })();
 </script>
 </body>
